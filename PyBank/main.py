@@ -1,20 +1,3 @@
-#Your task is to create a Python script that analyzes the records to calculate each of the following values:
-
-    # The total number of months included in the dataset
-
-    # The net total amount of "Profit/Losses" over the entire period
-
-    # The changes in "Profit/Losses" over the entire period, and then the average of those changes
-
-    # The greatest increase in profits (date and amount) over the entire period
-
-    # The greatest decrease in profits (date and amount) over the entire period
-
-#Open the file
-#Read in the header
-#Proceed with a loop to get the counter for the months
-#Net the total amount for profit/losses over the period
-
 import os
 import csv
 
@@ -41,12 +24,12 @@ with open(csvpath) as csvfile:
     previous_entry = 0
 
     for row in csvreader:
-        total_net = total_net + row[1]
+        total_net = total_net + int(row[1])
 
         if(counter == 0):
-            previous_entry = row[1]
+            previous_entry = int(row[1])
         else:
-            change = row[1] - previous_entry
+            change = int(row[1]) - int(previous_entry)
 
             #determine if the change is actually needing to be adjusted to either variable
             if(change > 0):
@@ -73,6 +56,9 @@ print("Financial Analysis")
 print("------------------------------")
 print(f"Total Months: ${counter}")
 print(f"Total: ${total_net}")
-print(f"Average Change: ${average_change}")
+print(f"Average Change: ${round(average_change, 2)}")
 print(f"Greatest Increase in Profits: {greatest_increase_date} (${greatest_increase})")
-print(f"Greatest Decrease in Profits: {greatest_decrease_date} (${greatest_decrease})")    
+print(f"Greatest Decrease in Profits: {greatest_decrease_date} (${greatest_decrease})")
+
+#Remaining focus: Write to .txt file
+#Source to "round": https://stackoverflow.com/questions/19431674/rounding-floats-to-nearest-10th
