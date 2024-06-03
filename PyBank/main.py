@@ -47,6 +47,7 @@ with open(csvpath) as csvfile:
         
         counter = counter + 1
 
+    #Get the average change
     average_change = average_change / (counter - 1)
 
 

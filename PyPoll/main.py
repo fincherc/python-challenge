@@ -18,15 +18,18 @@ with open(csvpath) as csvfile:
         "Raymon Anthony Doane" : 0
     }
 
+    #Iterate each row, increment inside of each dictionary entry
     for row in csvreader:
         counter = counter + 1
 
         if (row[2] in candidate):
             candidate[row[2]] = candidate[row[2]] + 1
     
+    #Winner section
     winner_name = ""
     winner_votes = 0
 
+    #Loop the dictionary, get the winner
     for key in candidate:
         if(candidate[key] > winner_votes):
             winner_votes = candidate[key]
