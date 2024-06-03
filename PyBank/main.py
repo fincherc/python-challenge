@@ -60,8 +60,6 @@ print(f"Average Change: ${round(average_change, 2)}")
 print(f"Greatest Increase in Profits: {greatest_increase_date} (${greatest_increase})")
 print(f"Greatest Decrease in Profits: {greatest_decrease_date} (${greatest_decrease})")
 
-#Source to "round": https://stackoverflow.com/questions/19431674/rounding-floats-to-nearest-10th
-
 #Write to .txt file:
 
 txtName = os.path.join("", "analysis", "analysis.txt")
@@ -74,8 +72,3 @@ txtwriter.write(f"Average Change: ${round(average_change, 2)}\n")
 txtwriter.write(f"Greatest Increase in Profits: {greatest_increase_date} (${greatest_increase})\n")
 txtwriter.write(f"Greatest Decrease in Profits: {greatest_decrease_date} (${greatest_decrease})\n")
 txtwriter.close()
-
-#Remaining focus: Write to .txt file
-#Source to "check if key exists": https://stackoverflow.com/questions/1602934/check-if-a-given-key-already-exists-in-a-dictionary
-# write file: https://www.w3schools.com/python/python_file_write.asp
-# string file write new line: https://stackoverflow.com/questions/2918362/writing-string-to-a-file-on-a-new-line-every-time

@@ -46,6 +46,7 @@ print("------------------------------")
 print(f"Winner: {winner_name}")
 
 #Write to .txt file:
+
 txtName = os.path.join("", "analysis", "analysis.txt")
 txtwriter = open(txtName, "w")
 txtwriter.write("Election Results\n")
@@ -58,8 +59,3 @@ for key in candidate:
 txtwriter.write("------------------------------\n")
 txtwriter.write(f"Winner: {winner_name}\n")
 txtwriter.close()
-
-#Remaining focus: Write to .txt file
-#Source to "check if key exists": https://stackoverflow.com/questions/1602934/check-if-a-given-key-already-exists-in-a-dictionary
-# write file: https://www.w3schools.com/python/python_file_write.asp
-# string file write new line: https://stackoverflow.com/questions/2918362/writing-string-to-a-file-on-a-new-line-every-time
